@@ -20,7 +20,10 @@ const Header = () => {
                             <li><a>Item 3</a></li>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                    <div className="flex gap-5 ">
+                <div ><img className="rounded-full h-10" src="https://i.ibb.co/jvX6cVP/41.png" alt="" /></div>
+                <div className="text-rose-800 font-extrabold text-2xl">Car Dock</div>
+            </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

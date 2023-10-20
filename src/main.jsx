@@ -14,7 +14,7 @@ import Add_Product from './Pages/Add_Product/Add_Product.jsx';
 import My_product from './Pages/My_Product/My_product.jsx';
 import Blog from './Pages/Blog/Blog.jsx';
 import Contact from './Pages/Contacts/Contact.jsx';
-import Cards from './Pages/Home/Cards.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
   },
   {
     path:"/blog",
-    element:<Cards></Cards>        
+    element:<Blog></Blog>       
 },
 {
   path:"/contact",
