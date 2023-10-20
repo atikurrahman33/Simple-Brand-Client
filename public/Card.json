@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "car_brand": "Toyota",
+      "image_url": "https://i.ibb.co/pbTqk7P/31.png"
+    },
+    {
+      "id": 2,
+      "car_brand": "Honda",
+      "image_url": "https://i.ibb.co/2K6KS4h/32.jpg"
+    },
+    {
+      "id": 3,
+      "car_brand": "Ford",
+      "image_url": "https://i.ibb.co/H2LWn67/33.webp"
+    },
+    {
+      "id": 4,
+      "car_brand": "Chevrolet",
+      "image_url": "https://i.ibb.co/LJtXqYt/34.webp"
+    },
+    {
+      "id": 5,
+      "car_brand": "Nissan",
+      "image_url": "https://i.ibb.co/zJFHLrX/35.jpg"
+    },
+    {
+      "id": 6,
+      "car_brand": "BMW",
+      "image_url": "https://i.ibb.co/RcXGhN6/36.png"
+    }
+  ]
+  
