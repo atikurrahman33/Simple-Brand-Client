@@ -17,6 +17,8 @@ import Contact from './Pages/Contacts/Contact.jsx';
 
 import ErrorPage from './Pages/Home/ErrorPage.jsx';
 import Carrds from './All About Card/Carrds';
+import Login from './User Page/Login/Login';
+
 
 
 
@@ -52,6 +54,12 @@ const router = createBrowserRouter([
   element:<Carrds></Carrds>,
   loader:()=>fetch('http://localhost:5000/users'),
 },
+{
+  path:"/login",
+  element:<Login></Login>
+  
+},
+
 
     ]
   },

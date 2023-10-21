@@ -126,6 +126,15 @@ const Header = () => {
                 <div className=" rounded-full flex gap-4 items-center">
                     <p>name</p>
           <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+          <NavLink
+                                to="/login"
+                                className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "text-pink-700 font-bold underline" : ""
+                                }
+                            >
+                                Login
+                            </NavLink>
+          
         </div>
        
                 </div>
