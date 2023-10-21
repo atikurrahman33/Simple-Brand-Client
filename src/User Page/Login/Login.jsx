@@ -1,4 +1,5 @@
 import { FcGoogle} from 'react-icons/fc';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
@@ -44,15 +45,11 @@ const Login = () => {
             <div className="flex items-center justify-center">
                 <FcGoogle></FcGoogle>
            
-            <span className="ml-4">
-            Log in
-            with
-            Google</span>
+            <span className="ml-4">Log in with Google</span>
             </div>
           </button>
 
-      <p className="mt-8">Need an account? <a href="#" className="text-blue-500 hover:text-blue-700 font-semibold">Create an
-              account</a></p>
+      <Link to={"/registration"}> <p className="mt-8">Need an account? <a href="#" className="text-blue-500 hover:text-blue-700 font-semibold">Create an account</a></p></Link>
 
 
     </div>

@@ -3,7 +3,7 @@
 const Blog = () => {
     return (
         <div className="p-10">
-            <div className="p-6">
+            <div className="">
                 <h3  className="text-3xl font-bold pb-2 "> Exploring the World of Premium Automobiles</h3>
                 <p  className="font-bold pb-2">At Car Deck, we're passionate about all things automotive. Our commitment to providing the finest selection of cars from a wide range of prestigious brands is what sets us apart. In our blog, we aim to extend this commitment by sharing our expertise, insights, and updates about the diverse world of automobiles.</p>
             </div>

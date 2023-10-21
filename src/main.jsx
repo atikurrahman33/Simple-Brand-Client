@@ -18,6 +18,7 @@ import Contact from './Pages/Contacts/Contact.jsx';
 import ErrorPage from './Pages/Home/ErrorPage.jsx';
 import Carrds from './All About Card/Carrds';
 import Login from './User Page/Login/Login';
+import Registration from './User Page/Registration/Registration';
 
 
 
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
   path:"/login",
   element:<Login></Login>
   
+},
+{
+  path:"/registration",
+  element:<Registration></Registration>,
 },
 
 
