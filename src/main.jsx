@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+
 import './index.css'
 
 import {
@@ -15,11 +15,16 @@ import My_product from './Pages/My_Product/My_product.jsx';
 import Blog from './Pages/Blog/Blog.jsx';
 import Contact from './Pages/Contacts/Contact.jsx';
 
+import ErrorPage from './Pages/Home/ErrorPage.jsx';
+import Carrds from './All About Card/Carrds';
+
+
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main_layout></Main_layout>,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
       {
           path:"/",
@@ -42,6 +47,12 @@ const router = createBrowserRouter([
   path:"/contact",
   element:<Contact></Contact>,      
 },
+{
+  path:"/about/:id",
+  element:<Carrds></Carrds>,
+  loader:()=>fetch('http://localhost:5000/users'),
+},
+
     ]
   },
   

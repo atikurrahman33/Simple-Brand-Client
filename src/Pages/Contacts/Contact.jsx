@@ -19,7 +19,7 @@ const Contact = () => {
             </div>
             <div>
                 <p className='text-xl font-bold'>Social Media</p>
-                <p className="social-icon text-3xl flex gap-3 pt-5 pl-52">
+                <p className="social-icon text-3xl flex gap-3 pt-5   md:pl-5 sm:pl-5 lg:pl-52">
                 
                 <a href=""> <FaFacebookF></FaFacebookF></a>
                  <a href=""><AiFillTwitterCircle></AiFillTwitterCircle></a>
