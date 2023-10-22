@@ -7,7 +7,8 @@ import Faq from "../../Header and Footer/Team_member/Faq";
 
 
 const Home = () => {
-    const items= useLoaderData()
+    const items= useLoaderData();
+    
     return (
         <div>
            <div> <Banner></Banner></div>

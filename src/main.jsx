@@ -19,6 +19,11 @@ import ErrorPage from './Pages/Home/ErrorPage.jsx';
 import Carrds from './All About Card/Carrds';
 import Login from './User Page/Login/Login';
 import Registration from './User Page/Registration/Registration';
+import AuthProvider from './User Page/AuthProvider';
+import PrivateRoute from './Route/PrivateRoute';
+import Update from './Pages/My_Product/update';
+
+
 
 
 
@@ -36,11 +41,11 @@ const router = createBrowserRouter([
       },
       {
         path:"/addProduct",
-        element:<Add_Product></Add_Product>,          
+        element:<PrivateRoute><Add_Product></Add_Product></PrivateRoute> ,      
     },
     {
       path:"/myProduct",
-      element:<My_product></My_product>,         
+      element:<PrivateRoute> <My_product></My_product></PrivateRoute>       
   },
   {
     path:"/blog",
@@ -64,15 +69,20 @@ const router = createBrowserRouter([
   path:"/registration",
   element:<Registration></Registration>,
 },
+{
+  path:"/update",
+  element:<Update></Update>
+},
 
 
     ]
   },
+
   
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-      <RouterProvider router={router} />
+  <AuthProvider><RouterProvider router={router} /></AuthProvider>  
   </React.StrictMode>,
 )

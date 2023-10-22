@@ -4,7 +4,8 @@ import 'react-tabs/style/react-tabs.css';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
-import ToyCard from "./ToyCard";
+import CardShow from "../../All About Card/CardShow";
+
 
 const CategoryTab = () => {
     const [toys, setToys] = useState([]);
@@ -51,27 +52,54 @@ const CategoryTab = () => {
                     <Tab onClick={() => setActiveTab('Toyota')}>Toyota</Tab>
                     <Tab onClick={() => setActiveTab('Honda')}>Honda</Tab>
                     <Tab onClick={() => setActiveTab('Ford')}>Ford</Tab>
+                    <Tab onClick={() => setActiveTab('Chevrolet')}>Chevrolet</Tab>
+                    <Tab onClick={() => setActiveTab('Nissan')}>Nissan</Tab>
+                    <Tab onClick={() => setActiveTab('BMW')}>BMW</Tab>
 
                 </TabList>
 
                 <TabPanel>
                     <div className="md:grid grid-cols-2 gap-20 px-4 md:px-0">
                         {
-                            toys.map(toy => <ToyCard toy={toy} key={toy._id}></ToyCard>)
+                            toys.map(toy => <CardShow toy={toy} key={toy._id}></CardShow>)
                         }
                     </div>
                 </TabPanel>
                 <TabPanel>
                     <div className="md:grid grid-cols-2 gap-20 px-4 md:px-0">
                         {
-                            toys.map(toy => <ToyCard toy={toy} key={toy._id}></ToyCard>)
+                            toys.map(toy => <CardShow toy={toy} key={toy._id}></CardShow>)
                         }
                     </div>
                 </TabPanel>
                 <TabPanel>
                     <div className="md:grid grid-cols-2 gap-20 px-4 md:px-0">
                         {
-                            toys.map(toy => <ToyCard toy={toy} key={toy._id}></ToyCard>)
+                            toys.map(toy => <CardShow toy={toy} key={toy._id}></CardShow>)
+                        }
+                    </div>
+
+                </TabPanel>
+                <TabPanel>
+                    <div className="md:grid grid-cols-2 gap-20 px-4 md:px-0">
+                        {
+                            toys.map(toy => <CardShow toy={toy} key={toy._id}></CardShow>)
+                        }
+                    </div>
+
+                </TabPanel>
+                <TabPanel>
+                    <div className="md:grid grid-cols-2 gap-20 px-4 md:px-0">
+                        {
+                            toys.map(toy => <CardShow toy={toy} key={toy._id}></CardShow>)
+                        }
+                    </div>
+
+                </TabPanel>
+                <TabPanel>
+                    <div className="md:grid grid-cols-2 gap-20 px-4 md:px-0">
+                        {
+                            toys.map(toy => <CardShow toy={toy} key={toy._id}></CardShow>)
                         }
                     </div>
 

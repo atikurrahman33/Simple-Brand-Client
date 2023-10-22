@@ -1,39 +1,99 @@
 import { Link } from "react-router-dom";
+import { useContext, useState } from 'react';
+import Swal from 'sweetalert2';
+import { AuthContext } from "../AuthProvider";
+import SocialLogin from "../SocialLogin";
+
+
 
 
 const Registration = () => {
+
+        const [error, setError] = useState('');
+        const [success, setSuccess] = useState('');
+        const {createUser}= useContext(AuthContext)
+        const handleRegister = e => {
+            e.preventDefault();
+            const form = new FormData(e.currentTarget);
+            const email=(form.get("email")); 
+            const password=(form.get("password")); 
+            console.log(email,password)
+            if (!/(?=.*[A-Z])/.test(password)) {
+                setError('Please enter at least one uppercase');
+                setSuccess('')
+                return;
+            } else if (!/(?=.*[!@#$&*])/.test(password)) {
+                setError('Please enter at least one special character');
+                setSuccess('')
+                return;
+            } else if (!/(?=.*[0-9])/.test(password)) {
+                setError('Please enter at least one number');
+                setSuccess('')
+                return;
+            } else if (!/.{6}/.test(password)) {
+                setError('Please enter minimum 6 character');
+                setSuccess('')
+                return;
+            }
+            createUser(email,password)
+            .then(result => {
+                // Signed up 
+    
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                setError('')
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Successfully register !',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+                // form.reset()
+                // ...
+              })
+              .catch((error) => {
+                console.error(error);
+                setError(error.message)
+                setSuccess('')
+              });
+          }
+
+    
+    
     return (
         <div>
             
 <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
   <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-    <img className="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company"/>
-    <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
+    
+    <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-blue-600">Sign in to your account</h2>
   </div>
 
   <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-    <form className="space-y-6" action="#" method="POST">
+    <form onSubmit={handleRegister}  className="space-y-6" action="#" method="POST">
       <div>
-        <label for="email" className="block text-sm font-medium leading-6 text-gray-900">Email address</label>
+        <label  className="block text-sm font-medium leading-6 text-blue-600">Email address</label>
         <div className="mt-2">
-          <input id="email" name="email" type="email" autocomplete="email" required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
+          <input id="email" name="email" type="email"  required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
         </div>
       </div>
 
       <div>
         <div className="flex items-center justify-between">
-          <label for="password" className="block text-sm font-medium leading-6 text-gray-900">Password</label>
+          <label className="block text-sm font-medium leading-6 text-blue-600">Password</label>
           <div className="text-sm">
             <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
           </div>
         </div>
         <div className="mt-2">
-          <input id="password" name="password" type="password" autocomplete="current-password" required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
+          <input id="password" name="password" type="password" required className="block w-full rounded-md border-0 py-1.5 text-gray-600 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
         </div>
       </div>
 
       <div>
         <button type="submit" className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign in</button>
+        <SocialLogin ></SocialLogin>
       </div>
     </form>
 
@@ -42,6 +102,11 @@ const Registration = () => {
       <Link to={`/login`}><a href="#" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Lonin</a></Link>
     </p>
   </div>
+  <label className="label">
+                            <p className="label-text-alt text-red-600">{error}</p>
+                            <p className="label-text-alt text-green-600">{success}</p>
+                        </label>
+  
 </div>
 
         </div>

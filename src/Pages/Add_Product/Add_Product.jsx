@@ -1,12 +1,19 @@
 
-import { data } from 'autoprefixer';
+
 import Swal from 'sweetalert2'
+import { AuthContext } from '../../User Page/AuthProvider';
+import { useContext } from 'react';
 
 function Add_Product() {
+    
+    const { user } = useContext(AuthContext);
+
   const handleUser = e =>{
     const form = e.target;
     const photoURL = form.photoURL.value;
     const name = form.name.value;
+    const sellerName = form.sellerName.value;
+    const sellerEmail = form.sellerEmail.value;
     const category = form.category.value;
     const price = parseFloat(form.price.value);
     const rating = parseFloat(form.rating.value);
@@ -15,7 +22,8 @@ function Add_Product() {
     const user = {
         name,
         picture:photoURL,
-       
+        sellerName,
+         email: sellerEmail,       
         availableQuantity:quantity,
         category,
         price,
@@ -61,6 +69,12 @@ function Add_Product() {
                             </div>
                             <div className="form-control">
                                 <input type="text" name="name" placeholder="Name" className="input input-bordered" />
+                            </div>
+                            <div className="form-control">
+                                <input type="text" name="sellerName" defaultValue={user?.displayName} className="input input-bordered" required />
+                            </div>
+                            <div className="form-control">
+                                <input type="email" name="sellerEmail" defaultValue={user?.email} className="input input-bordered" required />
                             </div>
                             
                             <div className="form-control">
