@@ -1,35 +1,28 @@
+import { Link, useLoaderData } from "react-router-dom";
 
-import { useContext } from "react";
-import { Link } from "react-router-dom";
-import { AuthContext } from "../../../Providers/AuthProvider";
-import Swal from "sweetalert2";
-import Rating from "react-rating";
-import { FaRegStar, FaStar } from "react-icons/fa";
-const ToyCard = ({toy}) => {
+
+
+const ToyCard = () => {
+    const carDetails = useLoaderData();
+    const{name,price,picture,description}=carDetails
+    console.log(carDetails);
     return (
-        <div>
-              
-              <div className="card card-side bg-base-100 shadow-xl grid md:grid-cols-2 items-center justify-center mb-4">
-                <figure className="w-full"><img className="w-full h-64 rounded-lg" src={toy.picture} alt="Movie" /></figure>
+        <div className="w-4/12 mx-auto py-10">
+            <div className="card w-96 bg-base-100 shadow-xl h-[450px]">
+                <figure className="250px"><img src={picture} /></figure>
                 <div className="card-body">
-                    <h2 className="card-title">{toy.name}</h2>
-                    <p>Price: ${toy.price}</p>
-                    <p>Rating: {toy.rating}</p>
-                    <Rating
-                        placeholderRating={toy.rating}
-                        readonly
-                        emptySymbol={<FaRegStar></FaRegStar>}
-                        placeholderSymbol={<FaStar className="text-warning"></FaStar>}
-                        fullSymbol={<FaStar></FaStar>}
-                    />
-                    <div className="card-actions justify-start">
-                        {user ?
-                            <Link to={`/toydetails/${toy?._id}`} className="btn border-0 bg-purple-600">Details</Link> : <Link to={`/toydetails/${toy?._id}`} onClick={showToast} className="btn bg-purple-600  border-0">Details</Link>
-                        }
+                    <h2 className="card-title">{name}</h2>
+                    <h2>Price: {price} $</h2>
+                   
+                    <p>{description}</p>
+                    <div className="card-actions justify-between ">
+                        
+                        <Link to={'/addProduct'}> <button className="bg-red-600 py-2 text-white rounded-lg px-4">Update</button></Link>
+
                     </div>
                 </div>
             </div>
-            
+          
         </div>
     );
 };

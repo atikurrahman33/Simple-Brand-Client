@@ -22,6 +22,7 @@ import Registration from './User Page/Registration/Registration';
 import AuthProvider from './User Page/AuthProvider';
 import PrivateRoute from './Route/PrivateRoute';
 import Update from './Pages/My_Product/update';
+import ToyCard from './Pages/Add_Product/ToyCard';
 
 
 
@@ -32,57 +33,64 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main_layout></Main_layout>,
-    errorElement:<ErrorPage></ErrorPage>,
-    children:[
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
       {
-          path:"/",
-          element:<Home></Home>, 
-          loader:()=>fetch('/Card.json'),      
+        path: "/",
+        element: <Home></Home>,
+        loader: () => fetch('/Card.json'),
       },
       {
-        path:"/addProduct",
-        element:<PrivateRoute><Add_Product></Add_Product></PrivateRoute> ,      
-    },
-    {
-      path:"/myProduct",
-      element:<PrivateRoute> <My_product></My_product></PrivateRoute>       
-  },
-  {
-    path:"/blog",
-    element:<Blog></Blog>       
-},
-{
-  path:"/contact",
-  element:<Contact></Contact>,      
-},
-{
-  path:"/about/:id",
-  element:<Carrds></Carrds>,
-  loader:()=>fetch('http://localhost:5000/users'),
-},
-{
-  path:"/login",
-  element:<Login></Login>
-  
-},
-{
-  path:"/registration",
-  element:<Registration></Registration>,
-},
-{
-  path:"/update",
-  element:<Update></Update>
-},
+        path: "/addProduct",
+        element: <PrivateRoute><Add_Product></Add_Product></PrivateRoute>,
+      },
+      {
+        path: "/myProduct",
+        element: <PrivateRoute> <My_product></My_product></PrivateRoute>
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>,
+      },
+      {
+        path: "/about/:id",
+        element: <Carrds></Carrds>,
+        loader: ({ params }) => fetch(`http://localhost:5000/brand/${params.id}`),
+      },
+      {
+        path: "/login",
+        element: <Login></Login>
+
+      },
+      {
+        path: "/registration",
+        element: <Registration></Registration>,
+      },
+      {
+        path: "/update/:id",
+        element: <Update></Update>,
+        loader: ({ params }) => fetch(`http://localhost:5000/newuser/${params.id}`),
+
+      },
+      {
+        path: "/toycard/:id",
+        element: <PrivateRoute><ToyCard></ToyCard></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/newuser/${params.id}`)
+      },
 
 
     ]
   },
 
-  
+
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-  <AuthProvider><RouterProvider router={router} /></AuthProvider>  
+    <AuthProvider><RouterProvider router={router} /></AuthProvider>
   </React.StrictMode>,
 )

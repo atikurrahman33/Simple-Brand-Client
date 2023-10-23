@@ -58,7 +58,7 @@ function Add_Product() {
 
   return (
     <div>
-     <h1 className="font-bold text-blue-900 md:text-4xl text-center">ADD YOUR NEW TOY</h1>
+     <h1 className="font-bold text-blue-900 md:text-4xl text-center">ADD YOUR NEW CAR</h1>
             <div className=" flex-shrink-0 mx-auto bg-[#F3F3F3] md:p-10 my-10">
             
                 <div className="card-body ">
@@ -85,12 +85,12 @@ function Add_Product() {
 
                                 >                                    
                                     <option value="" >Select a category</option>
-                                    <option value="car">Toyota</option>
-                                    <option value="bus">Honda</option>
-                                    <option value="truck">Ford</option>
-                                    <option value="truck">Chevrolet</option>
-                                    <option value="truck">Nissan</option>
-                                    <option value="truck">BMW</option>
+                                    <option value="Toyota">Toyota</option>
+                                    <option value="Honda">Honda</option>
+                                    <option value="Ford">Ford</option>
+                                    <option value="Chevrolet">Chevrolet</option>
+                                    <option value="Nissan">Nissan</option>
+                                    <option value="Bmw">BMW</option>
                                 </select>
                             </div>
                             <div className="form-control">

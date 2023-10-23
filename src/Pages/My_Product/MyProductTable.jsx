@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const MyProductTable = ({ cars, mycars, setMycars }) => {
-    const deleteToy = (id) => {
+    console.log(cars);
+    const deleteCar= (id) => {
         console.log(id);
         Swal.fire({
             title: 'Are you sure?',
@@ -24,7 +25,7 @@ const MyProductTable = ({ cars, mycars, setMycars }) => {
                         if (data.deletedCount > 0) {
                             Swal.fire(
                                 'Deleted!',
-                                'Your Toy has been deleted.',
+                                'Your Car has been deleted.',
                                 'success'
                             )
                             const remaining = mycars.filter(c => c._id !== id);
@@ -35,7 +36,7 @@ const MyProductTable = ({ cars, mycars, setMycars }) => {
         })
     }
     return (
-        <div>
+        <>
              <tr>
                 <td className="p-2 whitespace-nowrap">
                     <div className="md:flex items-center">
@@ -62,15 +63,15 @@ const MyProductTable = ({ cars, mycars, setMycars }) => {
                 </td>
                 <td className="md:pl-12 py-4 whitespace-nowrap flex gap-4">
 
-                    <RxCross1 onClick={() => deleteToy(cars._id)} className="p-3 text-5xl rounded" style={{ color: '#774320', background: 'linear-gradient(90.74deg, rgba(119, 67, 32, 0.15) 0.16%, rgba(232, 197, 128, 0.15) 100%)' }}></RxCross1>
+                    <RxCross1 onClick={() => deleteCar(cars?._id)} className="p-3 text-5xl rounded" style={{ color: '#774320', background: 'linear-gradient(90.74deg, rgba(119, 67, 32, 0.15) 0.16%, rgba(232, 197, 128, 0.15) 100%)' }}></RxCross1>
                     {/* The button to open modal */}
-                    <Link to={`/update/${cars._id}`} htmlFor="my-modal"><RxPencil1 className="p-3 text-5xl rounded" style={{ color: '#774320', background: 'linear-gradient(90.74deg, rgba(119, 67, 32, 0.15) 0.16%, rgba(232, 197, 128, 0.15) 100%)' }}></RxPencil1></Link>
+                    <Link to={`/update/${cars?._id}`} htmlFor="my-modal"><RxPencil1 className="p-3 text-5xl rounded" style={{ color: '#774320', background: 'linear-gradient(90.74deg, rgba(119, 67, 32, 0.15) 0.16%, rgba(232, 197, 128, 0.15) 100%)' }}></RxPencil1></Link>
 
                     
                 </td>
             </tr>
             
-        </div>
+        </>
     );
 };
 

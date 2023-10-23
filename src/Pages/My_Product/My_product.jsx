@@ -53,7 +53,7 @@ const My_Product = () => {
                                         <tr>
 
                                             <th className="p-2 whitespace-nowrap">
-                                                <div className="font-semibold text-left">Toy Name & image</div>
+                                                <div className="font-semibold text-left">Car Name & image</div>
                                             </th>
                                             <th className="p-2 whitespace-nowrap">
                                                 <div className="font-semibold text-left">Seller name</div>
