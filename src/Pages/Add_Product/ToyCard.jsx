@@ -4,14 +4,15 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const ToyCard = () => {
     const carDetails = useLoaderData();
-    const{name,price,picture,description}=carDetails
+    const{name,price,picture,description,category}=carDetails
     console.log(carDetails);
     return (
         <div className="w-4/12 mx-auto py-10">
-            <div className="card w-96 bg-base-100 shadow-xl h-[450px]">
-                <figure className="250px"><img src={picture} /></figure>
+            <div className="card w-96 bg-base-100 shadow-xl h-[500px]">
+                <figure className="300px"><img src={picture} /></figure>
                 <div className="card-body">
-                    <h2 className="card-title">{name}</h2>
+                <h2 className="card-title">Name: {name}</h2>
+                    <h2 className="card-title font-bold">Brand: {category}</h2>
                     <h2>Price: {price} $</h2>
                    
                     <p>{description}</p>

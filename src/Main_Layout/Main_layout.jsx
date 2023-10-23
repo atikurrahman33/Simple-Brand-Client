@@ -3,6 +3,7 @@ import Header from "../Header and Footer/Header/Header";
 import Footer from "../Header and Footer/Footer/Footer";
 
 
+
 const Main_layout = () => {
     return (
         
@@ -14,9 +15,11 @@ const Main_layout = () => {
         <div>
             <Outlet></Outlet>
         </div>
+        
         <div>
             <Footer></Footer>
         </div>
+        
             
         </div>
     );

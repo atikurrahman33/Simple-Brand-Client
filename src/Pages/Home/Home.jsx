@@ -3,6 +3,7 @@ import Banner from "../../Header and Footer/Banner/Banner";
 import Cards from "./Cards";
 import Team_member from "../../Header and Footer/Team_member/Team_member";
 import Faq from "../../Header and Footer/Team_member/Faq";
+import DirectConnect from "../../DirectConnect/DirectConnect";
 
 
 
@@ -23,6 +24,9 @@ const Home = () => {
            
         </div>
         <div> <Team_member></Team_member> </div>
+        <div>
+            <DirectConnect></DirectConnect>
+        </div>
         <div><Faq></Faq> </div>
            </div> 
           
