@@ -5,7 +5,7 @@ const CardShow = ({ card }) => {
     const {_id, name, picture, price ,category} = card;
     return (
 
-        <div className="pb-9">
+        <div className="pb-9 ">
             
                 <div className="card w-96 bg-base-100 shadow-xl h-[500px]">
                 <figure className="350px"><img src={picture} /></figure>

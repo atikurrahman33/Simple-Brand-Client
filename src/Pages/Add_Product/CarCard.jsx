@@ -7,7 +7,7 @@ const CarCard = () => {
     const{name,price,picture,description,category}=carDetails
     console.log(carDetails);
     return (
-        <div className="w-4/12 mx-auto py-10">
+        <div className="  py-10 sm:w-9/12 mx-auto ">
             <div className="card w-96 bg-base-100 shadow-xl h-[500px]">
                 <figure className="300px"><img src={picture} /></figure>
                 <div className="card-body">
