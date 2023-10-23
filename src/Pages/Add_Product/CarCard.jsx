@@ -1,8 +1,8 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
 
 
-const ToyCard = () => {
+const CarCard = () => {
     const carDetails = useLoaderData();
     const{name,price,picture,description,category}=carDetails
     console.log(carDetails);
@@ -18,7 +18,7 @@ const ToyCard = () => {
                     <p>{description}</p>
                     <div className="card-actions justify-between ">
                         
-                        <Link to={'/addProduct'}> <button className="bg-red-600 py-2 text-white rounded-lg px-4">Update</button></Link>
+                         <button className="bg-red-600 py-2 text-white rounded-lg px-4">Add to card</button>
 
                     </div>
                 </div>
@@ -28,4 +28,4 @@ const ToyCard = () => {
     );
 };
 
-export default ToyCard;
+export default CarCard;

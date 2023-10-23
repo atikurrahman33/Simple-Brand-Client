@@ -1,4 +1,4 @@
-import { useLoaderData, useNavigate, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate,  } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Update = () => {
@@ -7,7 +7,7 @@ const Update = () => {
     console.log(cars);
 
     const navigate = useNavigate();
-    const updateToyData = (e) =>{
+    const updateCarData = (e) =>{
         e.preventDefault();
         const form = e.target;
         const picture = form.photoURL.value;
@@ -15,7 +15,7 @@ const Update = () => {
         const price = parseFloat(form.price.value);
         const availableQuantity = form.quantity.value;
         const description = form.description.value;
-        const updateToy = {
+        const updateCar = {
             picture,
             name,
             price,
@@ -23,14 +23,14 @@ const Update = () => {
             description
         }
         
-        console.log(updateToy);
+        console.log(updateCar);
 
         fetch(`http://localhost:5000/newUser/${cars._id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(updateToy)
+            body: JSON.stringify(updateCar)
         })
             .then(res => res.json())
             .then(data => {
@@ -38,7 +38,7 @@ const Update = () => {
                 if (data.modifiedCount > 0) {
                     Swal.fire(
                         'Good job!',
-                        'Toy updated successfully',
+                        'Car updated successfully',
                         'success'
                     )
                     form.reset();
@@ -51,7 +51,7 @@ const Update = () => {
         <div>
 
             <div className="card-body ">
-                <form onSubmit={updateToyData}>
+                <form onSubmit={updateCarData}>
                     <div className="md:grid grid-cols-2 gap-4 space-y-4 md:space-y-0">
                         <div className="form-control ">
                             <label className="mb-2 font-bold">Photo URL</label>

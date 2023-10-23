@@ -22,7 +22,7 @@ import Registration from './User Page/Registration/Registration';
 import AuthProvider from './User Page/AuthProvider';
 import PrivateRoute from './Route/PrivateRoute';
 import Update from './Pages/My_Product/update';
-import ToyCard from './Pages/Add_Product/ToyCard';
+import CarCard from './Pages/Add_Product/CarCard';
 
 
 
@@ -77,8 +77,8 @@ const router = createBrowserRouter([
 
       },
       {
-        path: "/toycard/:id",
-        element: <PrivateRoute><ToyCard></ToyCard></PrivateRoute>,
+        path: "/carcard/:id",
+        element: <PrivateRoute><CarCard></CarCard></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/newuser/${params.id}`)
       },
 
