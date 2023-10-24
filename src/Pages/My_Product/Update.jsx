@@ -25,7 +25,7 @@ const Update = () => {
         
         console.log(updateCar);
 
-        fetch(`http://localhost:5000/newUser/${cars._id}`, {
+        fetch(`https://simple-brand-server-bnt1savmi-atikur-rahmans-projects-28d664b2.vercel.app/newUser/${cars._id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

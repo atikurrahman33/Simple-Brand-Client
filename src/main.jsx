@@ -59,7 +59,7 @@ const router = createBrowserRouter([
       {
         path: "/about/:id",
         element: <Carrds></Carrds>,
-        loader: ({ params }) => fetch(`http://localhost:5000/brand/${params.id}`),
+        loader: ({ params }) => fetch(`https://simple-brand-server-bnt1savmi-atikur-rahmans-projects-28d664b2.vercel.app/brand/${params.id}`),
       },
       {
         path: "/login",
@@ -73,13 +73,13 @@ const router = createBrowserRouter([
       {
         path: "/update/:id",
         element: <Update></Update>,
-        loader: ({ params }) => fetch(`http://localhost:5000/newuser/${params.id}`),
+        loader: ({ params }) => fetch(`https://simple-brand-server-bnt1savmi-atikur-rahmans-projects-28d664b2.vercel.app/newuser/${params.id}`),
 
       },
       {
         path: "/carcard/:id",
         element: <PrivateRoute><CarCard></CarCard></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/newuser/${params.id}`)
+        loader: ({ params }) => fetch(`https://simple-brand-server-bnt1savmi-atikur-rahmans-projects-28d664b2.vercel.app/newuser/${params.id}`)
       },
 
 

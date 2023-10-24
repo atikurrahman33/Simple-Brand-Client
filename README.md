@@ -20,4 +20,4 @@ BRAND SHOP PROJECT
 * We try to add more feature but for time shotes it's not possible this time.
 ## Live Link
 
-* This is my website live link :
+* This is my website live link :https://65380c5660e984007a96edf3--quiet-boba-078908.netlify.app/

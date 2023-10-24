@@ -16,7 +16,7 @@ const MyProductTable = ({ cars, mycars, setMycars }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/users/${id}`, {
+                fetch(`https://simple-brand-server-bnt1savmi-atikur-rahmans-projects-28d664b2.vercel.app/users/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

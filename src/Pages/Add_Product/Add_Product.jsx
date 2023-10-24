@@ -36,7 +36,7 @@ function Add_Product() {
 
         console.log(userObj);
 
-        fetch('http://localhost:5000/users', {
+        fetch('https://simple-brand-server-bnt1savmi-atikur-rahmans-projects-28d664b2.vercel.app/users', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

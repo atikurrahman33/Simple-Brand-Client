@@ -9,7 +9,7 @@ const My_Product = () => {
     console.log(user);
     
     const [mycars, setMycars] = useState([]);
-    const url = `http://localhost:5000/newuser/?email=${user?.email}`;
+    const url = `https://simple-brand-server-bnt1savmi-atikur-rahmans-projects-28d664b2.vercel.app/newuser/?email=${user?.email}`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -20,13 +20,13 @@ const My_Product = () => {
     console.log(mycars);
 
     const sortByAscending = () => {
-        fetch(`http://localhost:5000/newuser/ascending?email=${user?.email}`)
+        fetch(`https://simple-brand-server-bnt1savmi-atikur-rahmans-projects-28d664b2.vercel.app/newuser/ascending?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setMycars(data))
     };
 
     const sortByDescending = () => {
-        fetch(`http://localhost:5000/newuser/descending?email=${user?.email}`)
+        fetch(`https://simple-brand-server-bnt1savmi-atikur-rahmans-projects-28d664b2.vercel.app/newuser/descending?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setMycars(data))
     };
