@@ -18,11 +18,11 @@ const Footer = () => {
   </nav> 
   <nav>
     <header className="footer-title">Company</header> 
-                <Link to='/'>Home</Link>
-                <Link to='/addProduct'>Add Product</Link>
-                <Link to='/myProduct'>My Product</Link>
-                <Link to='/contact'>Contact</Link>
-                <Link to='/blog'>Blogs</Link>
+                <Link className="hover:text-pink-500 link-hover" to='/'>Home</Link>
+                <Link  className="hover:text-pink-500 link-hover" to='/addProduct'>Add Product</Link>
+                <Link  className="hover:text-pink-500 link-hover" to='/myProduct'>My Product</Link>
+                <Link  className="hover:text-pink-500 link-hover" to='/contact'>Contact</Link>
+                <Link  className="hover:text-pink-500 link-hover" to='/blog'>Blogs</Link>
   </nav> 
   <nav>
     <header className="footer-title">Legal</header> 

@@ -44,8 +44,8 @@ const Header = () => {
                         <li>
                             <NavLink
                                 to="/"
-                                className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-pink-800 font-bold underline" : ""
+                                className={({ isActive,}) =>
+                                  isActive ? "text-pink-800 font-bold underline" : ""
                                 }
                             >
                                 Home
@@ -65,7 +65,7 @@ const Header = () => {
                             <NavLink
                                 to="/myProduct"
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-pink-700 font-bold underline" : ""
+                                    isPending ? "pending" : isActive ? "text-pink-800 font-bold underline" : ""
                                 }
                             >
                                 My Product
@@ -75,21 +75,21 @@ const Header = () => {
                             <NavLink
                                 to="/blog"
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-pink-700 font-bold underline" : ""
+                                    isPending ? "pending" : isActive ? "text-pink-800 font-bold underline" : ""
                                 }
                             >
                                 Blog
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink
-                                to="/contact"
-                                className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-pink-700 font-bold underline" : ""
-                                }
-                            >
-                                Contact
-                            </NavLink>
+                        <NavLink
+  to="/contact"
+  className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "text-pink-800 font-bold underline" : ""
+  }
+>
+  Contact
+</NavLink>
                         </li>
                         </ul>
                     </div>
@@ -125,7 +125,7 @@ const Header = () => {
                             <NavLink
                                 to="/myProduct"
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-pink-700 font-bold underline" : ""
+                                    isPending ? "pending" : isActive ? "text-pink-800 font-bold underline" : ""
                                 }
                             >
                                 My Product
@@ -135,21 +135,21 @@ const Header = () => {
                             <NavLink
                                 to="/blog"
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-pink-700 font-bold underline" : ""
+                                    isPending ? "pending" : isActive ? "text-pink-800 font-bold underline" : ""
                                 }
                             >
                                 Blog
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink
-                                to="/contact"
-                                className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-pink-700 font-bold underline" : ""
-                                }
-                            >
-                                Contact
-                            </NavLink>
+                        <NavLink
+  to="/contact"
+  className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "text-pink-800 font-bold underline" : ""
+  }
+>
+  Contact
+</NavLink>
                         </li>
 
                     </ul>
@@ -187,8 +187,8 @@ const Header = () => {
                         :
                         <NavLink
                             to="/login"
-                            className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "text-pink-700 font-bold underline" : ""
+                            className={({ isActive,  }) =>
+                                isActive ? "text-pink-700 font-bold underline" : ""
                             }
                         >
                             Login

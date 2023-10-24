@@ -1,6 +1,6 @@
 
 
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 import { AuthContext } from '../../User Page/AuthProvider';
 import { useContext } from 'react';
 
@@ -8,53 +8,54 @@ function Add_Product() {
     
     const { user } = useContext(AuthContext);
 
-  const handleUser = e =>{
-    const form = e.target;
-    const photoURL = form.photoURL.value;
-    const name = form.name.value;
-    const sellerName = form.sellerName.value;
-    const sellerEmail = form.sellerEmail.value;
-    const category = form.category.value;
-    const price = parseFloat(form.price.value);
-    const rating = parseFloat(form.rating.value);
-    const quantity = form.quantity.value;
-    const description = form.description.value;
-    const user = {
-        name,
-        picture:photoURL,
-        sellerName,
-         email: sellerEmail,       
-        availableQuantity:quantity,
-        category,
-        price,
-        rating,
-        description
+    const handleUser = e => {
+        e.preventDefault(); // Prevent the form from submitting the traditional way
+
+        const form = e.target;
+        const photoURL = form.photoURL.value;
+        const name = form.name.value;
+        const userName = form.userName.value;
+        const userEmail = form.userEmail.value;
+        const category = form.category.value;
+        const price = parseFloat(form.price.value);
+        const rating = parseFloat(form.rating.value);
+        const quantity = form.quantity.value;
+        const description = form.description.value;
+
+        const userObj = { // Use a different variable name
+            name,
+            picture: photoURL,
+            userName,
+            email: userEmail,
+            availableQuantity: quantity,
+            category,
+            price,
+            rating,
+            description
+        };
+
+        console.log(userObj);
+
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(userObj), // Send the userObj instead of user
+        })
+        .then(response => response.json())
+        .then(json => {
+            console.log(json)
+            if (json.insertedId) {
+                Swal.fire(
+                    'Thank you!',
+                    'Your toy is now available',
+                    'success'
+                )
+                form.reset()
+            }
+        });
     }
-    
-    console.log(user);
-    
-    fetch('http://localhost:5000/users',{
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: JSON.stringify(user),
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data)
-        if(data.insertedId){
-            Swal.fire(
-                'Thank you!',
-                'Your toy is now available',
-                'success'
-              )
-          form.reset()
-        }
-      })
-  }
-  
 
   return (
     <div>
@@ -71,10 +72,10 @@ function Add_Product() {
                                 <input type="text" name="name" placeholder="Name" className="input input-bordered" />
                             </div>
                             <div className="form-control">
-                                <input type="text" name="sellerName" defaultValue={user?.displayName} className="input input-bordered" required />
+                                <input type="text" name="userName" defaultValue={user?.displayName} className="input input-bordered" required />
                             </div>
                             <div className="form-control">
-                                <input type="email" name="sellerEmail" defaultValue={user?.email} className="input input-bordered" required />
+                                <input type="email" name="userEmail" defaultValue={user?.email} className="input input-bordered" required />
                             </div>
                             
                             <div className="form-control">
