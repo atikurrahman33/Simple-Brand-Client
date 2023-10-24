@@ -1,10 +1,12 @@
 import { useLoaderData } from "react-router-dom";
+import Rating from "react-rating";
+import { FaRegStar, FaStar } from "react-icons/fa";
 
 
 
 const CarCard = () => {
     const carDetails = useLoaderData();
-    const{name,price,picture,description,category}=carDetails
+    const{name,price,picture,description,category,rating}=carDetails
     console.log(carDetails);
     return (
         <div className="  py-10 sm:w-9/12 mx-auto ">
@@ -14,6 +16,14 @@ const CarCard = () => {
                 <h2 className="card-title">Name: {name}</h2>
                     <h2 className="card-title font-bold">Brand: {category}</h2>
                     <h2>Price: {price} $</h2>
+                    <h2>Rating: {rating} </h2>
+                    <Rating
+                        placeholderRating={rating}
+                        readonly
+                        emptySymbol={<FaRegStar></FaRegStar>}
+                        placeholderSymbol={<FaStar className="text-warning"></FaStar>}
+                        fullSymbol={<FaStar></FaStar>}
+                    />
                    
                     <p>{description}</p>
                     <div className="card-actions justify-between ">

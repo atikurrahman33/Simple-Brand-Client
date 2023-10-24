@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
+import Rating from "react-rating";
+import { FaRegStar, FaStar } from "react-icons/fa";
 
 
 const CardShow = ({ card }) => {
-    const {_id, name, picture, price ,category} = card;
+    const {_id, name, picture, price ,category,rating} = card;
     return (
 
         <div className="pb-9 ">
@@ -13,14 +15,15 @@ const CardShow = ({ card }) => {
                     <h2 className="card-title">Name: {name}</h2>
                     <h2 className="card-title font-bold">Brand: {category}</h2>
                     <h2>Price: {price} $</h2>
+                    <h2>Rating: {rating} </h2>
                     <div>
-                        <div className="rating">
-                            <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
-                            <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" checked />
-                            <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
-                            <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
-                            <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
-                        </div>
+                    <Rating
+                        placeholderRating={rating}
+                        readonly
+                        emptySymbol={<FaRegStar></FaRegStar>}
+                        placeholderSymbol={<FaStar className="text-warning"></FaStar>}
+                        fullSymbol={<FaStar></FaStar>}
+                    />
                     </div>
                     
                     <div className="card-actions justify-between ">
