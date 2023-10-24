@@ -49,7 +49,7 @@ function Add_Product() {
             if (json.insertedId) {
                 Swal.fire(
                     'Thank you!',
-                    'Your toy is now available',
+                    'Your car is now available',
                     'success'
                 )
                 form.reset()

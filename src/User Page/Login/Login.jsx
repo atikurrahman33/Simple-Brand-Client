@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from '../AuthProvider';
 
 
+
 const Login = () => {
 
     const {signIn}=useContext(AuthContext);
@@ -66,12 +67,12 @@ const Login = () => {
       <form onSubmit={handleLogin} className="mt-6" action="#" method="POST">
         <div>
           <label className="block text-gray-700">Email Address</label>
-          <input type="email" name="" id="" placeholder="Enter Email Address" className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none" autofocus autocomplete required/>
+          <input type="email" name="email" id="" placeholder="Enter Email Address" className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none" autofocus autocomplete required/>
         </div>
 
         <div className="mt-4">
           <label className="block text-gray-700">Password</label>
-          <input type="password" name="" id="" placeholder="Enter Password" minlength="6" className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500
+          <input type="password" name="password" id="" placeholder="Enter Password" minlength="6" className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500
                 focus:bg-white focus:outline-none" required/>
         </div>
 

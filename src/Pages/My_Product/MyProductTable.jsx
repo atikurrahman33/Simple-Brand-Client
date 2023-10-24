@@ -46,7 +46,7 @@ const MyProductTable = ({ cars, mycars, setMycars }) => {
                     </div>
                 </td>
                 <td className="p-2 whitespace-nowrap">
-                    <div className="font-medium text-gray-800">{cars?.sellerName}</div>
+                    <div className="font-medium text-gray-800">{cars?.userName}</div>
                 </td>
                 <td className="p-2 whitespace-nowrap">
                     <div className="text-left font-medium text-gray-700">{cars?.category}</div>

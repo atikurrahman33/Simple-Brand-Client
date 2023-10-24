@@ -56,7 +56,7 @@ const My_Product = () => {
                                                 <div className="font-semibold text-left">Car Name & image</div>
                                             </th>
                                             <th className="p-2 whitespace-nowrap">
-                                                <div className="font-semibold text-left">Seller name</div>
+                                                <div className="font-semibold text-left">User name</div>
                                             </th>
                                             <th className="p-2 whitespace-nowrap">
                                                 <div className="font-semibold text-left">Category</div>
